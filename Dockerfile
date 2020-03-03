@@ -1,5 +1,5 @@
 FROM ubuntu as fetcher
-RUN apt-get update
+RUN apt-get update && apt-get install -y git && apt-get install -y openssh-server
 ARG SSH_PRIVATE_KEY
 WORKDIR /app
 RUN mkdir /root/.ssh/

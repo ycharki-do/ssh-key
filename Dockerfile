@@ -5,6 +5,7 @@ WORKDIR /app
 RUN mkdir /root/.ssh/
 RUN echo "${SSH_PRIVATE_KEY}" > /root/.ssh/id_rsa
 RUN ssh-keyscan gitlab.com >> /root/.ssh/known_hosts
+RUN chmod 777 /root/.ssh/id_rsa
 RUN git clone git@gitlab.com:ycharki-do/secret-file.git
 
 FROM ubuntu

@@ -9,5 +9,8 @@ RUN git clone git@gitlab.com:ycharki-do/secret-file.git
 
 FROM ubuntu
 COPY --from=fetcher /app/secret-file .
-RUN cat secret-file/README.md
+COPY entrypoint.sh .
+RUN chmod +x ./entrypoint.sh
+ENTRYPOINT [ "./entrypoint.sh" ]
+
 

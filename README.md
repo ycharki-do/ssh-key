@@ -1,10 +1,10 @@
 ## Build the image 
 
-docker build -t ycharki/sshkey:1.0 --build-arg SSH_PRIVATE_KEY="$(cat /root/.ssh/id_rsa)" .
+    docker build -t ycharki/sshkey:1.0 --build-arg SSH_PRIVATE_KEY="$(cat /root/.ssh/id_rsa)" .
 
 ## Run the image
 
-docker run ycharki/sshkey:1.0
+    docker run ycharki/sshkey:1.0
 
 ## Note
 

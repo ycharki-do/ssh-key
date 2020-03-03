@@ -9,7 +9,7 @@ RUN chmod 400 /root/.ssh/id_rsa
 RUN git clone git@gitlab.com:ycharki-do/secret-file.git
 
 FROM ubuntu
-COPY --from=fetcher /app/secret-file .
+COPY --from=fetcher /app/secret-file secret-file
 COPY entrypoint.sh .
 RUN chmod +x ./entrypoint.sh
 ENTRYPOINT [ "./entrypoint.sh" ]
